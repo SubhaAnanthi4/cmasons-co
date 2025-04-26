@@ -24,7 +24,7 @@ const Login = () => {
     const enteredUsername = e.target.username.value;
     const enteredPassword = e.target.password.value;
 
-    if (enteredUsername === 'admin' && enteredPassword === 'admin123') {
+    if (enteredUsername === 'admin' && enteredPassword === 'admin') {
       localStorage.setItem('isLoggedIn', 'true');
       navigate('/material-list');
     } else {

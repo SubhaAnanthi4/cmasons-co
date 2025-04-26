@@ -1,0 +1,291 @@
+/* Reset and base layout */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff;
+}
+
+/* Apply box-sizing to all elements */
+* {
+  box-sizing: border-box;
+}
+
+/* Center the main container */
+.material-list-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.material-list-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 8px; /* 🔧 Tighten this */
+}
+
+.material-list-header {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 16px; 
+  /* 🔧 This was probably too large */
+}
+
+.table-wrapper {
+  margin-top: 0; /* 🔧 Eliminate extra spacing above table */
+}
+
+/* Pastel-styled buttons */
+.material-list-header button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #ffd6e0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #333;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Button hover */
+.material-list-header button:hover {
+  background-color: #ffc4d6;
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Table wrapper to center and give spacing */
+.table-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 0px;
+}
+
+/* Table styling */
+.material-table {
+  width: 100%;
+  max-width: 1000px;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Header & Cell Styling */
+.material-table th,
+.material-table td {
+  padding: 14px 20px;
+  text-align: center;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Header only */
+.material-table th {
+  background-color: #ffeaf2;
+  font-weight: 700;
+}
+
+/* Alternating rows */
+.material-table tr:nth-child(odd) {
+  background-color: #fef6fb;
+}
+
+.material-table tr:nth-child(even) {
+  background-color: #e6f9f0;
+}
+
+/* Row hover effect */
+.material-table tr:hover {
+  background-color: #dff0ff;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Edit & Delete Buttons inside table */
+.material-table .action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.material-table .action-buttons button {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+  transition: background-color 0.2s ease-in-out;
+  box-shadow: none; /* Ensures no blur effect */
+}
+
+.material-table .action-buttons .edit-btn {
+  background-color: #a1e7a1; /* Pastel green */
+}
+
+.material-table .action-buttons .edit-btn:hover {
+  background-color: #81d681; /* Darker pastel green */
+  transform: translateY(-2px); /* Clear hover effect */
+}
+
+.material-table .action-buttons .delete-btn {
+  background-color: #ffb3c1; /* Pastel coral */
+}
+
+.material-table .action-buttons .delete-btn:hover {
+  background-color: #ff7f8f; /* Darker pastel coral */
+  transform: translateY(-2px); /* Clear hover effect */
+}
+
+/* Overlay for the form with transparency */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+/* Form popup with transparent background */
+.popup-form {
+  background-color: rgba(176, 254, 255, 0.8); /* White with 80% opacity */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+  backdrop-filter: blur(8px); /* Optional: Adds blur effect to the background */
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Popup form title */
+.popup-form h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Input styling for the form */
+.popup-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #f8f8f8;
+  transition: background-color 0.3s ease;
+}
+
+.popup-form input:focus {
+  background-color: #fff;
+  border-color: #ff90a0;
+  outline: none;
+}
+
+/* Buttons inside the form */
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.popup-buttons button {
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.popup-buttons button:hover {
+  transform: translateY(-2px);
+}
+
+.edit-btn {
+  background-color: #28a745;
+  color: white;
+  margin: 10px;
+}
+
+.edit-btn:hover {
+  background-color: #218838;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  margin: 10px;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+.user-icon-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.user-icon {
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  outline: none;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  padding: 10px;
+}
+
+.dropdown-menu button {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 5px 10px;
+  width: 100%;
+  text-align: left;
+  color: #333;
+}
+
+.dropdown-menu button:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

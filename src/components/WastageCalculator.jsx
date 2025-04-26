@@ -11,6 +11,8 @@ const WastageCalculator = () => {
     const fetchMaterials = async () => {
       try {
         const response = await fetch('https://cma-textiles-1.onrender.com/materials');
+        
+
         const data = await response.json();
         setMaterials(data); // Assuming the response is an array of materials
       } catch (err) {
